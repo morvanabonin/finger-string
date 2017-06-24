@@ -1,0 +1,20 @@
+version: '3'
+services:
+  web:
+    container_name: finger-string
+    image: morvanabonin/phpnginx:2.0
+    volumes:
+    - .:/app
+    links:
+    - mysql
+  mysql:
+    container_name: finger-string-mysql
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_HOST=localhost
+      - MYSQL_DATABASE=finger-string
+      - MYSQL_USER=finger
+      - MYSQL_PASSWORD=f1ng3r
