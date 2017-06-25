@@ -16,8 +16,7 @@ services:
       - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_HOST=localhost
-      - MYSQL_DATABASE=finger-string
-      - MYSQL_USER=finger
+      - MYSQL_DATABASE=fingerstring
+      - MYSQL_USER=fingerstring
       - MYSQL_PASSWORD=f1ng3r
 
