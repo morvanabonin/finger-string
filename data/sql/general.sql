@@ -5,19 +5,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema fingerstring
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema fingerstring
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `fingerstring` DEFAULT CHARACTER SET utf8 ;
+USE `fingerstring` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`user`
+-- Table `fingerstring`.`user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`user` (
+CREATE TABLE IF NOT EXISTS `fingerstring`.`user` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL,
   `username` VARCHAR(30) NOT NULL,
@@ -30,9 +30,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`imdb`
+-- Table `fingerstring`.`imdb`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`imdb` (
+CREATE TABLE IF NOT EXISTS `fingerstring`.`imdb` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `user_id` INT NOT NULL,
   `title` VARCHAR(100) NOT NULL,
@@ -45,16 +45,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`imdb` (
   INDEX `fk_imdb_user_idx` (`user_id` ASC),
   CONSTRAINT `fk_imdb_user`
     FOREIGN KEY (`user_id`)
-    REFERENCES `mydb`.`user` (`id`)
+    REFERENCES `fingerstring`.`user` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`episode`
+-- Table `fingerstring`.`episode`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`episode` (
+CREATE TABLE IF NOT EXISTS `fingerstring`.`episode` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `imdb_id` INT NOT NULL,
   `title` VARCHAR(100) NULL,
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`episode` (
   INDEX `fk_episode_imdb1_idx` (`imdb_id` ASC),
   CONSTRAINT `fk_episode_imdb1`
     FOREIGN KEY (`imdb_id`)
-    REFERENCES `mydb`.`imdb` (`id`)
+    REFERENCES `fingerstring`.`imdb` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
