@@ -1,3 +1,6 @@
+<?php
+    require_once('partials/header.phtml');
+?>
 <div class="container">
     <div class="login-container">
         <div id="output"></div>
@@ -11,4 +14,7 @@
         </div>
     </div>
 </div>
+<?php
+    require_once('partials/footer.phtml');
+?>
 
