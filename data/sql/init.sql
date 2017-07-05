@@ -40,7 +40,8 @@ CREATE TABLE IF NOT EXISTS `fingerstring`.`imdb` (
   `type` VARCHAR(45) NULL,
   `description` TEXT NULL,
   `createdAt` DATETIME NOT NULL,
-  `deleted` DATETIME NULL,
+  `watched` BIT(1) NOT NULL DEFAULT b'0',
+  `deleted` BIT(1) NOT NULL DEFAULT b'0',
   PRIMARY KEY (`id`),
   INDEX `fk_imdb_user_idx` (`user_id` ASC),
   CONSTRAINT `fk_imdb_user`
@@ -60,7 +61,8 @@ CREATE TABLE IF NOT EXISTS `fingerstring`.`episode` (
   `title` VARCHAR(100) NULL,
   `number_episode` INT(3) NULL,
   `createdAt` DATETIME NOT NULL,
-  `deleted` TINYINT NULL,
+  `watched` BIT(1) NOT NULL DEFAULT b'0',
+  `deleted` BIT(1) NOT NULL DEFAULT b'0',
   PRIMARY KEY (`id`),
   INDEX `fk_episode_imdb1_idx` (`imdb_id` ASC),
   CONSTRAINT `fk_episode_imdb1`

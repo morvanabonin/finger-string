@@ -5,6 +5,7 @@ services:
     image: morvanabonin/phpnginx:2.0
     volumes:
     - .:/app
+    - .:/tmp/logs
     links:
     - mysql
   mysql:
