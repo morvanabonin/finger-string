@@ -10,7 +10,7 @@ return [
         // Database
         'db' => [
             'host' => getenv('MYSQL_HOST'),
-            'user' => getenv('MYSQL_USER'),
+            'UserEntity' => getenv('MYSQL_USER'),
             'pass' => getenv('MYSQL_PASSWORD'),
             'dbname' => getenv('MYSQL_DATABASE')
         ]
